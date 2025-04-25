@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 400px;
+}
+
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.card h1, .card h2 {
+  font-family: 'Great Vibes', cursive;
+  color: #e91e63;
+  font-size: 2rem;
+}
+
+.card p {
+  color: #444;
+  line-height: 1.6;
+  font-weight: bold;
+}
+
+input[type="password"] {
+  padding: 10px;
+  width: 100%;
+  margin: 1rem 0;
+  border: 2px solid #e91e63;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #c2185b;
+}
+
+.hidden {
+  display: none;
+}
+
+.animated {
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+.signature {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem;
+  color: #e91e63;
+  display: block;
+  margin-top: 1rem;
+}
+
+#statusText {
+  margin-top: 10px;
+  color: #e91e63;
+  font-weight: bold;
+}
+
+/* Mobile Optimization */
+@media screen and (max-width: 480px) {
+  .card {
+    padding: 1.5rem;
+  }
+
+  h1, h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
