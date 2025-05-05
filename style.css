@@ -4,83 +4,91 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  background: linear-gradient(to right, #f8cdda, #f88bc3);
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  position: relative;
 }
 
 .container {
   width: 90%;
-  max-width: 400px;
+  max-width: 420px;
+  z-index: 1;
 }
 
 .card {
   background: white;
   padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
   text-align: center;
-  transition: all 0.3s ease-in-out;
+  animation: fadeInUp 0.8s ease-in-out;
+  position: relative;
 }
 
 .card h1, .card h2 {
   font-family: 'Great Vibes', cursive;
-  color: #e91e63;
-  font-size: 2rem;
+  color: #d81b60;
+  font-size: 2.2rem;
 }
 
 .card p {
-  color: #444;
-  line-height: 1.6;
-  font-weight: bold;
+  color: #333;
+  line-height: 1.7;
+  font-weight: 500;
 }
 
 input[type="password"] {
-  padding: 10px;
+  padding: 12px;
   width: 100%;
   margin: 1rem 0;
-  border: 2px solid #e91e63;
-  border-radius: 10px;
+  border: 2px solid #d81b60;
+  border-radius: 12px;
   font-size: 1rem;
+  outline: none;
+  transition: all 0.3s;
+}
+
+input[type="password"]:focus {
+  border-color: #ad1457;
+  box-shadow: 0 0 5px rgba(216, 27, 96, 0.4);
 }
 
 button {
-  background-color: #e91e63;
+  background-color: #d81b60;
   color: white;
   border: none;
-  padding: 10px 15px;
-  font-size: 1rem;
-  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 1.05rem;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s;
+  font-weight: bold;
 }
 
 button:hover {
-  background-color: #c2185b;
+  background-color: #ad1457;
+  transform: scale(1.05);
 }
 
 .hidden {
   display: none;
 }
 
-.animated {
-  animation: fadeInUp 0.8s ease-in-out;
-}
-
 .signature {
   font-family: 'Great Vibes', cursive;
-  font-size: 1.5rem;
-  color: #e91e63;
+  font-size: 1.8rem;
+  color: #d81b60;
   display: block;
   margin-top: 1rem;
 }
 
 #statusText {
   margin-top: 10px;
-  color: #e91e63;
+  color: #d81b60;
   font-weight: bold;
 }
 
@@ -91,7 +99,7 @@ button:hover {
   }
 
   h1, h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -104,5 +112,27 @@ button:hover {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Animated hearts background */
+.hearts::before {
+  content: '💖 💕 💓 💗 💞';
+  font-size: 1.5rem;
+  animation: floatHearts 8s linear infinite;
+  position: absolute;
+  bottom: -20px;
+  width: 100%;
+  text-align: center;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+@keyframes floatHearts {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100vh);
   }
 }
